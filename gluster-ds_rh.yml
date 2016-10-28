@@ -32,6 +32,8 @@ spec:
               mountPath: "/glusterfs/brick1"
             - name: gluster-varlib
               mountPath: "/var/lib/glusterd"
+            - name: gluster-etc-swift
+              mountPath: "/etc/swift"
           securityContext:
             privileged: true
       hostDirVolumePlugin: true
@@ -47,4 +49,7 @@ spec:
         - name: gluster-varlib
           hostPath:
             path: "/glusterfs/glusterd-varlib"
+        - name: gluster-etc-swift
+          hostPath:
+            path: "/glusterfs/glusterd-etc-swift"
 
